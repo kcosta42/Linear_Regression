@@ -1,18 +1,13 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    trainer.py                                         :+:      :+:    :+:    #
+#    visualizer.py                                      :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: kcosta <kcosta@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/11/20 18:54:24 by kcosta            #+#    #+#              #
-#    Updated: 2018/11/20 18:55:13 by kcosta           ###   ########.fr        #
+#    Created: 2018/11/23 14:47:09 by kcosta            #+#    #+#              #
+#    Updated: 2018/11/23 15:04:23 by kcosta           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-import pandas as pd
-
-def read_dataset(filename):
-
-  pd.read_csv(filename)
-  return
+import matplotlib.pyplot as plt
