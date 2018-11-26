@@ -6,12 +6,12 @@
 #    By: kcosta <kcosta@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/20 18:54:24 by kcosta            #+#    #+#              #
-#    Updated: 2018/11/23 16:05:52 by kcosta           ###   ########.fr        #
+#    Updated: 2018/11/26 11:14:55 by kcosta           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 from linear_regression.perceptron import Perceptron
-import matplotlib.pyplot as plt
+from linear_regression.visualizer import show_data, show_errors, show_model
 import pandas as pd
 
 def read_dataset(dataset, visual=False):
@@ -21,31 +21,18 @@ def read_dataset(dataset, visual=False):
   y = df.iloc[0:, 1].values
 
   if visual:
-    plt.scatter(X, y, marker='x')
-    plt.xlabel('mileage')
-    plt.ylabel('price')
-    plt.show()
+    show_data(X, y)
 
   mean = X[0:].mean()
   std = X[0:].std()
 
   X_std = (X[0:] - mean) / std
   ppn = Perceptron(eta=0.15, n_iter=19).fit(X_std, y)
+  ppn.save_model(mean, std)
   print("Model Trained.")
 
   if visual:
+    show_errors(ppn)
+    show_model(ppn, X_std, X, y)
 
-    plt.plot(range(1, len(ppn._errors) + 1), ppn._errors, marker='o')
-    plt.xlabel('Epochs')
-    plt.ylabel('Number of misclassifications')
-    plt.show()
-
-    plt.scatter(X, y, marker='x')
-    plt.plot(X, ppn._theta1 * X_std + ppn._theta0)
-    plt.title('Linear Regression')
-    plt.xlabel('mileage')
-    plt.ylabel('price')
-    plt.show()
-
-  ppn.save_model(mean, std)
   return
