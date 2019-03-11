@@ -37,9 +37,11 @@ First we need to train our model with the provided dataset
 
 `python3 gradient_descent.py -v datasets/data.csv`
 
-<img src="./images/Figure_1.png"/>
-<img src="./images/Figure_2.png"/>
-<img src="./images/Figure_3.png"/>
+<div align="center">
+  <img src="./images/Figure_1.png" width="280" height="210" border="2"/>
+  <img src="./images/Figure_2.png" width="280" height="210" border="2"/>
+  <img src="./images/Figure_3.png" width="280" height="210" border="2"/>
+</div>
 
 This will save the weights trained in `./linear_regression/model.csv`
 ```
