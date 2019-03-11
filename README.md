@@ -10,13 +10,11 @@ This is the first project of the Artificial Intelligence branch at School 42 Par
 
 Math
 ----
-$h_\theta(x)=\theta_0+\theta_1x$
 
-$J(\theta_0, \theta_1)=\frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})^2$
-
-$\theta_j=\theta_j-\alpha\frac{\partial}{\partial\theta_j}J(\theta_0, \theta_1)$
-
-$\frac{\partial}{\partial\theta_j}J(\theta_0, \theta_1)=\frac{1}{m}\sum_{i=1}^{m}(h_\theta(x^{(i)}) - y^{(i)})\cdot{x^{(i)}}$
+<img src="./images/Formula_0.svg"/>
+<img src="./images/Formula_1.svg"/>
+<img src="./images/Formula_2.svg"/>
+<img src="./images/Formula_3.svg"/>
 
 Installation
 ------------
